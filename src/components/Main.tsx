@@ -2,24 +2,24 @@ import mountain from "../assets/mountain.jpg";
 import landing2 from "../assets/landing2.jpg";
 import bird from "../assets/bird.jpg";
 import neom from "../assets/neom.jpg";
-import { Navbar } from "./Navbar";
+import { useNavigate } from "react-router-dom";
 const Main = () => {
+  const navigate = useNavigate()
   return (
     <div className="grid place-items-center">
       <div className="slider-box relative w-full h-auto overflow-hidden ">
-        <Navbar />
         <ul className="flex p-0">
           <li>
-            <img src={bird} alt="bird" className="w-full h-screen" loading="lazy"  />
+            <img src={bird} alt="bird" className="w-full h-screen"   />
           </li>
           <li>
-            <img src={landing2} alt="landing2" className="w-full h-screen" loading="lazy"  />
+            <img src={landing2} alt="landing2" className="w-full h-screen"   />
           </li>
           <li>
-            <img src={mountain} className="w-full h-screen" alt="mountain" loading="lazy"  />
+            <img src={mountain} className="w-full h-screen" alt="mountain"   />
           </li>
           <li>
-            <img src={neom} alt="neom" className="w-full h-screen" loading="lazy" />
+            <img src={neom} alt="neom" className="w-full h-screen"  />
           </li>
         </ul>
       </div>
@@ -29,7 +29,7 @@ const Main = () => {
           Únete a una expedición digital, capturando momentos especiales y
           compartiéndolos con la comunidad.
         </h3>
-        <button className="p-3 text-lg mt-6 px-12 rounded-lg bg-transparent text-white font-medium border-white border-4 hover:bg-white hover:text-slate-900 ">
+        <button onClick={()=>navigate('/login')} className="p-3 text-lg mt-6 px-12 rounded-lg bg-transparent text-white font-medium border-white border-4 hover:bg-white hover:text-slate-900 ">
           Comienza aquí
         </button>
       </div>

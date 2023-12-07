@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 :root{
-  --fuenteHeading: 'Jost', sans-serif;;
+  --fuenteHeading: 'Montserrat', sans-serif;;
 }
-h1,h2,h3,a{
+h1,h2,h3,a, span{
   font-family: var(--fuenteHeading);
 }
 a{
@@ -18,8 +18,53 @@ a{
   width: 100%;
 }
 .amplify-button--primary{
-  background-color: #047D95 !important;
+  background-color: blue !important;
   color: #fff !important;
+  font-weight: bold !important;
+  
+}
+.bg-image{
+  background-image: url('./assets/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  height: max-content;
+}
+.amplify-field-group__outer-end{
+  border: 1px solid #fff !important;
+}
+
+ [data-amplify-authenticator] [data-amplify-router]{
+  background-color: #000 !important;
+  opacity: 0.55 !important;
+  border: 1.5px solid #fff !important;
+}
+.amplify-icon{
+  border-color: #fff !important;
+}
+.amplify-icon > svg {
+  color: white !important;
+}
+.amplify-input{
+  border-color: white !important;
+  border: 1.5px solid white !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.amplify-tabs__item--active{
+  color: white !important
+  
+}
+.amplify-tabs__item{
+  color: white !important
+}
+.amplify-button--small{
+  color: white !important;
+}
+.amplify-label{
+  color: white !important;
+  font-size: medium !important;
 }
 .slider-box ul{
   width: 400%;
