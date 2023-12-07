@@ -1,5 +1,5 @@
-import React from 'react'
-import SidebarMobile from './mobile/SidebarMobile'
+// import React from 'react'
+// import SidebarMobile from './mobile/SidebarMobile'
 import SidebarDesktop from './mobile/SidebarDesktop';
 
 const Inicio = () => {

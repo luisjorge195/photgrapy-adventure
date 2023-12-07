@@ -1,12 +1,12 @@
-import { useState, useCallback } from "react";
+import {useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 const Prueba = () => {
   // const [file, setFile] = useState();
-  const onDrop = useCallback((acceptedFiles) => {
-    // Do something with the files
+  const onDrop = useCallback((acceptedFiles:unknown) => {
+    console.log('import', acceptedFiles);
   }, []);
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDrop });
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", acceptedFiles[0]);

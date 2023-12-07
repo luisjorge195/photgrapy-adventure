@@ -1,11 +1,15 @@
 import { Amplify } from "aws-amplify";
-import awsExports from "../aws-exports";
+// import awsExports from "../aws-exports";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import '../App.css'
 // import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import { AuthUser } from "aws-amplify/auth";
+import { ReactNode } from "react";
 
+// eslint-disable-next-line
+/* eslint-disable */
 const Login = () => {
   const navigate = useNavigate()
   Amplify.configure({
@@ -16,12 +20,15 @@ const Login = () => {
       },
     },
   });
+   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   return (
     <section className="grid place-items-center h-screen bg-image log">
         <Authenticator>
-        {({ user }) => 
-          user ? navigate('/inicio/contenido'): ''
-        }
+        {({ user }:{ user?: AuthUser | undefined }) => (
+                <div>
+                   {user && navigate('/inicio') as ReactNode }
+                </div>
+            )}
         </Authenticator>
     </section>
   );
