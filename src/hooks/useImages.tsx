@@ -10,15 +10,20 @@ const useImages = () => {
     try {
       const resultImages = await listAll(listRef);
 
-      const imagesWithMetadata = await Promise.all(
-        resultImages.items.map(async (itemRef) => {
-          const url = await getDownloadURL(itemRef);
-          const metadata = await getMetadata(itemRef);
-
-          return { name: metadata.name, url };
-        })
-      );
-
+      const downloadURLPromises = resultImages.items.map(async (itemRef) => {
+        return getDownloadURL(itemRef);
+      });
+  
+      const downloadURLs = await Promise.all(downloadURLPromises);
+  
+      const metadataPromises = downloadURLs.map(async (url, index) => {
+        const itemRef = resultImages.items[index];
+        const metadata = await getMetadata(itemRef);
+        return { name: metadata.name, url };
+      });
+  
+      const imagesWithMetadata = await Promise.all(metadataPromises);
+  
       setListImagesUser(imagesWithMetadata);
     } catch (error) {
       console.error("Error al obtener la lista de imágenes:", error);
