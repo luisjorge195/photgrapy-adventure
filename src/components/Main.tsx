@@ -1,7 +1,3 @@
-import mountain from "../assets/mountain.jpg";
-import landing2 from "../assets/landing2.jpg";
-import bird from "../assets/bird.jpg";
-import neom from "../assets/neom.jpg";
 import { useNavigate } from "react-router-dom";
 const Main = () => {
   const navigate = useNavigate()
@@ -10,16 +6,16 @@ const Main = () => {
       <div className="slider-box relative w-full h-auto overflow-hidden ">
         <ul className="flex p-0">
           <li>
-            <img src={bird} alt="bird" className="w-full h-screen"   />
+            <img src="../assets/bird.jpg" alt="bird" className="w-full h-screen"   />
           </li>
           <li>
-            <img src={landing2} alt="landing2" className="w-full h-screen"   />
+            <img src="../assets/landing2.jpg" alt="landing2" className="w-full h-screen"   />
           </li>
           <li>
-            <img src={mountain} className="w-full h-screen" alt="mountain"   />
+            <img src="../assets/mountain.jpg" className="w-full h-screen" alt="mountain"   />
           </li>
           <li>
-            <img src={neom} alt="neom" className="w-full h-screen"  />
+            <img src="../assets/neom.jpg" alt="neom" className="w-full h-screen"  />
           </li>
         </ul>
       </div>
