@@ -1,23 +1,10 @@
 
 
-import { fetchAuthSession } from "aws-amplify/auth";
-import { useEffect, useState } from "react";
-
+import { useCookies } from "react-cookie";
 const useAuth = () => {
-  const [session, setSession] = useState({})
-  async function currentSession() {
-    try {
-      const { accessToken, idToken } = (await fetchAuthSession()).tokens ?? {};
-      setSession({accessToken, idToken})
-    } catch (err) {
-      console.log(err);
-    }
-  }
-  useEffect(()=>{
-    currentSession()
-  },[])
+  const [cookie,] = useCookies(['session', 'nameUser']);
   
-  return {session};
+  return {cookie};
 };
 
 export default useAuth;

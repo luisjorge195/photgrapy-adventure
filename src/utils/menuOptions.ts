@@ -31,7 +31,7 @@ export const menu = [
     id: 5,
     title: "Mi perfil",
     image: 'home',
-    url:'',
-    modal: true
+    url:'/inicio/perfil',
+    modal: false
   },
 ];

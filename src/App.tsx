@@ -5,14 +5,13 @@ import Login from "./components/Login";
 import Inicio from "./components/Inicio";
 import Contenido from "./components/Contenido";
 import Prueba from "./components/Prueba";
+import Perfil from "./components/profile/Profile";
 
 function App() {
   const Layout = () => {
   
     return (
-        <div className="flex">
-          <Inicio />
-        </div>
+            <Inicio/>
     );
   };
   const router = createBrowserRouter([
@@ -35,6 +34,10 @@ function App() {
         {
           path: "/inicio/prueba",
           element: <Prueba />,
+        },
+        {
+          path: "/inicio/perfil",
+          element: <Perfil />,
         },
       ],
     },
