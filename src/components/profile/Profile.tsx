@@ -1,20 +1,25 @@
 //import useAuth from "../../hooks/useAuth";
 import ProfileInformation from "./ProfileInformation";
-import useImages from "../../hooks/useImages";
+import { fetchImages } from "../../hooks/useImages";
 import Publications from "./Publications";
+import { useQuery } from "react-query";
+import Spinner from "../spinner/Spinner";
+import { ModalContent } from "../modals/ModalContent";
+import UserProfile from "./UserProfile";
 
 const Profile = () => {
   //const { cookie } = useAuth();
-  const { listImagesUser } = useImages();
-  console.log('listImagesUser',listImagesUser[0])
-  return (
+  const { isLoading } = useQuery("images", fetchImages);
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <section>
       <div className="grid grid-cols-2 items-center border-b-2 border-slate-200">
         <div className="w-full mt-5 grid place-content-center">
-          <img
-            src={listImagesUser !== undefined ? listImagesUser[0]?.url || '' : ''}
-            alt="Avatar"
-            className="w-44 h-44 rounded-full mb-4"
+          <ModalContent
+            name={
+              <UserProfile className="rounded-full w-40 h-40"/>
+            }
           />
         </div>
         <div>
@@ -22,7 +27,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="mt-2 text-center">
-        <Publications/>
+        <Publications />
       </div>
     </section>
   );

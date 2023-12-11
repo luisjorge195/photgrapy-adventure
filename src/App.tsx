@@ -3,16 +3,13 @@ import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login";
 import Inicio from "./components/Inicio";
-import Contenido from "./components/Contenido";
-import Prueba from "./components/Prueba";
+import Contenido from "./components/generalContent/Contenido";
 import Perfil from "./components/profile/Profile";
+import Explore from "./components/explore/Explore";
 
 function App() {
   const Layout = () => {
-  
-    return (
-            <Inicio/>
-    );
+    return <Inicio />;
   };
   const router = createBrowserRouter([
     {
@@ -32,8 +29,8 @@ function App() {
           element: <Contenido />,
         },
         {
-          path: "/inicio/prueba",
-          element: <Prueba />,
+          path: "/inicio/tendencias",
+          element: <Explore />,
         },
         {
           path: "/inicio/perfil",

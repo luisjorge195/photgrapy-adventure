@@ -1,23 +1,34 @@
-import useImages from "../../hooks/useImages";
+import { useQuery } from "react-query";
 import useAuth from "../../hooks/useAuth";
-import UploadImage from "../UploadImage";
+import { fetchImages } from "../../hooks/useImages";
+import { ModalContent } from "../modals/ModalContent";
+
 const Publications = () => {
   const { cookie } = useAuth();
-  const { listImagesUser } = useImages();
-  const imagesUser = listImagesUser.filter((item) =>
+
+  // Utiliza React Query para obtener las imágenes
+  const { data: listImagesUser } = useQuery("images", fetchImages);
+  console.log("data", listImagesUser);
+  const imagesUser = listImagesUser?.filter((item) =>
     item.name.includes(cookie.session)
   );
+
   return (
-    <div className="">
-      <h1>Mis aventuras digitales</h1>
-      {imagesUser.length === 0 ? (
-        <UploadImage />
+    <div>
+      <h1 className="mt-4">Mis aventuras digitales</h1>
+      {imagesUser && imagesUser.length === 0 ? (
+        <ModalContent name="abrir" />
       ) : (
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
-          {imagesUser !== undefined &&
-            imagesUser.map((image) => (
-              <img src={image?.url} alt="image" loading="lazy" />
-            ))}
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5 mt-10">
+          {imagesUser?.map((image) => (
+            <img
+              key={image?.url}
+              src={image?.url}
+              alt={image.name}
+              loading="lazy"
+              className="object-cover w-full h-full"
+            />
+          ))}
         </div>
       )}
     </div>

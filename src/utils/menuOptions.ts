@@ -1,36 +1,33 @@
+import home from '../assets/home.png'
+import compass from '../assets/compass.png'
+import plus from '../assets/plus.png'
+
 export const menu = [
   {
     id: 1,
     title: "Inicio",
-    image: 'home',
+    image: home,
     url:'/inicio/contenido',
     modal: false
   },
   {
     id: 2,
-    title: "Explorar",
-    image: 'compass',
-    url:'/inicio/prueba',
+    title: "Tendencias",
+    image: compass,
+    url:'/inicio/tendencias',
     modal: false
-  },
-  {
-    id: 3,
-    title: "Notificaciones",
-    image: 'notification',
-    url:'',
-    modal: true
   },
   {
     id: 4,
     title: "Crear",
-    image: 'plus',
+    image: plus,
     url:'',
     modal: true
   },
   {
     id: 5,
     title: "Mi perfil",
-    image: 'home',
+    image: home,
     url:'/inicio/perfil',
     modal: false
   },

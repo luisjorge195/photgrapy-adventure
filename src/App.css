@@ -9,6 +9,38 @@
 h1,h2,h3,a, span{
   font-family: var(--fuenteHeading);
 }
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-container:hover .overlay {
+  display: flex;
+}
+body{
+  overflow-y: hidden;
+}
+
+.button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
 a{
   text-align: none;
   font-size: 1.1rem;
@@ -22,6 +54,14 @@ a{
   color: #fff !important;
   font-weight: bold !important;
   
+}
+amplify-text--error {
+  color: #f9f9f9 !important;
+}
+.amplify-alert--error{
+  color: black !important;
+  font-weight: bold !important;
+  background-color: white !important;
 }
 .bg-image{
   background-image: url('./assets/fondo.jpg');
@@ -68,7 +108,7 @@ a{
 }
 .slider-box ul{
   width: 400%;
-  animation: slide 25s infinite alternate linear;
+  animation: slide 15s infinite alternate linear;
 }
 .slider-box li{
   width: 100%;
@@ -100,5 +140,175 @@ a{
     margin-left: -300%;
   }
 }
+/* Estilos generales */
+.container {
+  display: block;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Estilos para la vista previa de la imagen */
+.image-preview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.image-preview:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para el formulario de carga */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-drop {
+  border: 2px dashed #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.file-drop:hover {
+  background-color: #f9f9f9;
+}
+
+.info-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos para el botón de guardar */
+.save-button {
+  margin-top: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para la sección de descripción */
+.description-section {
+  margin-top: 20px;
+  font-size: 16px;
+}
 
 
+/* Estilos para un slider */
+/* Estilos CSS */
+.check {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel-body {
+  flex: 0 0 auto;
+  width: 100px; /* Ajusta el ancho según tus necesidades */
+  text-align: center;
+}
+
+/* Añade estilos adicionales según sea necesario */
+
+/* Estilos para los botones */
+
+
+.button-container button {
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  margin: 0 10px;
+  padding: 5px;
+  color: #000;
+}
+
+.button-container button:focus {
+  outline: none;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  max-width: 800px !important;
+  overflow-y: hidden !important;
+}
+
+/* boton like */
+.heart-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.content{
+  padding: 13px 16px;
+  display: flex;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.content.heart-active{
+  border-color: #f9b9c4;
+  background: #fbd0d8;
+}
+.heart{
+  position: absolute;
+  background: url("./assets/like.png") no-repeat;
+  background-position: left;
+  background-size: 2900%;
+  height: 90px;
+  width: 90px;
+  top: 50%;
+  left: 21%;
+  transform: translate(-50%,-50%);
+}
+.text{
+  font-size: 21px;
+  margin-left: 30px;
+  color: white;
+}
+.numb:before{
+  content: '12';
+  font-size: 21px;
+  margin-left: 7px;
+  font-weight: 600;
+  color: white;
+  font-family: sans-serif;
+}
+.numb.heart-active:before{
+  content: '13';
+  color: #000;
+}
+.text.heart-active{
+  color: #000;
+}
+.heart.heart-active{
+  animation: animate .8s steps(28) 1;
+  background-position: right;
+}
+@keyframes animate {
+  0%{
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
+}
