@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+La aplicación utiliza AWS Cognito para gestionar las credenciales y la autenticación, proporcionando una capa de seguridad robusta. Además, se utiliza Firebase para el almacenamiento de imágenes y Firestore como base de datos en tiempo real. Aunque el sistema de autenticación está basado en AWS Cognito, hubiera sido super interasente seguir sacando provecho de cognito ya que permitia implementar la confirmación del inicio de sesión a través de mensajes de texto a un celular registrado pero eso iba a generar costo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Características Principales
+Autenticación Segura: El sistema de autenticación se basa en AWS Cognito, garantizando un entorno seguro y confiable.
 
-Currently, two official plugins are available:
+Almacenamiento de Imágenes con Firebase: Firebase se utiliza para el almacenamiento eficiente y seguro de las imágenes cargadas por los usuarios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Firestore para Base de Datos en Tiempo Real: Firestore sirve como la base de datos en tiempo real, permitiendo la gestión dinámica de datos, como la lista de imágenes compartidas y sus respectivos comentarios.
 
-## Expanding the ESLint configuration
+Subida de Fotografías: La aplicación permite a los usuarios cargar sus fotografías de manera sencilla.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Funcionalidad de Like: Los usuarios pueden dar "like" a las fotografías compartidas por otros usuarios.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Lista de Fotografías Compartidas: Se presenta una lista de las fotografías compartidas, junto con sus respectivos comentarios.
