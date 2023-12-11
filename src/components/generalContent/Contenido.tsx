@@ -68,14 +68,13 @@ const Contenido = () => {
                   />
 
                   {hoveredIndex === index && (
-                    <div className="overlay flex justify-between items-end">
+                    <div className="overlay text-center">
                       <div className="block p-6 mb-4"></div>
-                      <div className="gap-x-10 text-white mb-4 p-6">
+                      <div className=" text-white mb-4 p-6">
                         <ShareOutlinedIcon sx={{ cursor: "pointer" }} />
                       </div>
                     </div>
                   )}
-                  <h1>comentarios</h1>
                 </div>
               }
             />

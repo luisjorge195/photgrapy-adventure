@@ -4,12 +4,12 @@ import { initializeApp } from "firebase/app";
 import { getDownloadURL, getStorage, ref, uploadBytes} from "firebase/storage"
 import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyD6yuaAaTQd_RqkkQOxAGh2NycZOlxvVGA",
-  authDomain: "digital-adventure-9b6ae.firebaseapp.com",
-  projectId: "digital-adventure-9b6ae",
-  storageBucket: "digital-adventure-9b6ae.appspot.com",
-  messagingSenderId: "846276445196",
-  appId: "1:846276445196:web:4ba09441ebaf191e06da29"
+  apiKey: import.meta.env.VITE_APIKEY_FIREBASE,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

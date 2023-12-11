@@ -70,7 +70,7 @@ const Menu = ({ className }: styles) => {
                 />
                 {item.modal && windowWidth > 780 ? (
                   <ModalContent name={windowWidth > 780 ? item.title : <img
-                    src={item.image}
+                    src={`../../assets/${item.image}`}
                     className="w-5 h-5"
                   />} />
                 ) : (

@@ -12,7 +12,6 @@ import { useContext } from "react";
 import { DescriptionContext } from "../context/description";
 
 const DescriptionImage = ({ id }: identificator) => {
-  console.log("id", id);
   const { cookie } = useAuth();
   const { setDescription } = useContext(DescriptionContext);
   return (
